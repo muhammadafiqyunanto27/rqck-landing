@@ -1,0 +1,95 @@
+---
+// src/components/KontakFooter.astro
+---
+
+<section id="kontak" class="py-12 md:py-16 bg-[#FAF6EE]/50 border-t border-[#063A24]/10">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    
+    <!-- JUDUL SEKSI -->
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <span class="text-[#B59449] font-semibold text-xs tracking-wider uppercase block mb-1">Hubungi Kami</span>
+      <h2 class="text-[#063A24] font-bold text-2xl md:text-3xl mb-3">Mulai Langkah Kebaikanmu</h2>
+      <p class="text-[#063A24]/80 text-sm md:text-base">
+        Punya pertanyaan seputar program belajar atau tes penempatan kelas? Yuk, hubungi kami langsung atau kunjungi lokasi kami.
+      </p>
+    </div>
+
+    <!-- GRID KONTAK & MAPS -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+      
+      <!-- KARTU INFORMASI KONTAK -->
+      <div class="bg-white p-6 rounded-2xl border border-[#063A24]/10 shadow-xs flex flex-col justify-between h-full">
+        <div>
+          <h3 class="text-[#063A24] font-bold text-lg mb-4">Informasi Kontak</h3>
+          
+          <!-- Detail WA -->
+          <div class="flex items-start gap-3 mb-5">
+            <div class="w-9 h-9 rounded-lg bg-[#063A24]/10 text-[#063A24] flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-sm text-[#063A24]">WhatsApp Admin</h4>
+              <p class="text-xs text-[#063A24]/70 mt-0.5" >+62 822-8205-7062</p>
+            </div>
+          </div>
+
+          <!-- Detail Email -->
+          <div class="flex items-start gap-3 mb-5">
+            <div class="w-9 h-9 rounded-lg bg-[#063A24]/10 text-[#063A24] flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-sm text-[#063A24]">Email RQCK</h4>
+              <p class="text-xs text-[#063A24]/70 mt-0.5" >cahayakebaikanrumahquran@gmail.com</p>
+            </div>
+          </div>
+
+          <!-- Detail Alamat -->
+          <div class="flex items-start gap-3 mb-6">
+            <div class="w-9 h-9 rounded-lg bg-[#063A24]/10 text-[#063A24] flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-sm text-[#063A24]">Alamat RQCK</h4>
+              <p class="text-xs text-[#063A24]/70 mt-0.5 leading-relaxed">RQCK Store, Kota Bandar Lampung, Lampung, Indonesia</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TOMBOL CHAT WA OTOMATIS -->
+        <a 
+          href="https://wa.me/6282282057062?text=Bismillah,%20Assalamu'alaikum%20Admin%20RQCK.%20Saya%20ingin%20bertanya%20mengenai%20pendaftaran%20dan%20tes%20penempatan%20kelas." 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="block w-full text-center bg-[#063A24] text-white font-semibold text-sm py-3 rounded-xl transition-all duration-300 hover:bg-[#B59449] hover:scale-102 shadow-xs active:scale-98"
+        >
+          Hubungi via WhatsApp
+        </a>
+      </div>
+
+      <!-- GOOGLE MAPS IFRAME -->
+      <div class="w-full h-[280px] md:h-[320px] rounded-2xl overflow-hidden border border-[#063A24]/10 shadow-xs group">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248.2680228872!2d105.27512913818776!3d-5.37292280298212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40dbf89e00a5bf%3A0x43e8fa2ec38f8c6b!2sRQCK%20Store!5e0!3m2!1sid!2sid!4v1782294251071!5m2!1sid!2sid" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="strict-origin-when-cross-origin"
+          class="w-full h-full object-cover transition-all duration-300 group-hover:scale-101"
+        ></iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#063A24] py-6 text-center border-t border-[#white]/5">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <p class="text-white/60 text-xs md:text-sm tracking-wide">
+      &copy; 2026 Rumah Quran Cahaya Kebaikan (RQCK). All Rights Reserved.
+    </p>
+  </div>
+</footer>

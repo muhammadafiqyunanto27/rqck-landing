@@ -40,7 +40,7 @@
       </nav>
 
       <!-- CTA Button -->
-      <div class="hidden sm:flex items-center">
+      <div class="hidden md:flex items-center">
         <a 
           href="#kontak" 
           class="inline-flex items-center justify-center bg-[#B59449] text-white font-medium px-5 py-2.5 rounded-xl shadow-sm transition-all duration-300 hover:bg-[#A37F35] hover:shadow-md"
@@ -67,29 +67,22 @@
     </div>
 
     <!-- Mobile Navigation Menu -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-[#063A24]/10 pb-6 pt-2">
-      <div class="space-y-3">
-        <a href="#beranda" class="block px-3 py-2.5 rounded-xl text-base font-semibold text-[#063A24] hover:bg-[#063A24]/5 hover:text-[#B59449] transition-all">
-          Beranda
-        </a>
-        <a href="#program" class="block px-3 py-2.5 rounded-xl text-base font-semibold text-[#063A24] hover:bg-[#063A24]/5 hover:text-[#B59449] transition-all">
-          Program
-        </a>
-        <a href="#fasilitas" class="block px-3 py-2.5 rounded-xl text-base font-semibold text-[#063A24] hover:bg-[#063A24]/5 hover:text-[#B59449] transition-all">
-          Fasilitas
-        </a>
-        <a href="#tentang" class="block px-3 py-2.5 rounded-xl text-base font-semibold text-[#063A24] hover:bg-[#063A24]/5 hover:text-[#B59449] transition-all">
-          Tentang Kami
-        </a>
-        <div class="pt-4 border-t border-[#063A24]/5 px-3">
-          <a 
-            href="#kontak" 
-            class="w-full inline-flex items-center justify-center bg-[#B59449] text-white font-medium px-4 py-2.5 rounded-xl transition-colors hover:bg-[#A37F35]"
-          >
-            Hubungi Kami
-          </a>
-        </div>
-      </div>
+    <div id="mobile-menu" class="absolute top-full left-4 right-4 mt-2 p-5 bg-[#FAF6EE]/95 backdrop-blur-md rounded-2xl border border-[#063A24]/10 shadow-lg transition-all duration-300 ease-in-out flex flex-col gap-3 z-50 md:hidden opacity-0 scale-95 pointer-events-none origin-top">
+      <a href="#" class="mobile-link block w-full text-center py-3 rounded-xl text-[#063A24] font-semibold text-sm bg-white border border-[#063A24]/5 transition-all duration-200 hover:bg-[#063A24] hover:text-[#B59449]">Beranda</a>
+      <a href="#program" class="mobile-link block w-full text-center py-3 rounded-xl text-[#063A24] font-semibold text-sm bg-white border border-[#063A24]/5 transition-all duration-200 hover:bg-[#063A24] hover:text-[#B59449]">Program</a>
+      <a href="#fasilitas" class="mobile-link block w-full text-center py-3 rounded-xl text-[#063A24] font-semibold text-sm bg-white border border-[#063A24]/5 transition-all duration-200 hover:bg-[#063A24] hover:text-[#B59449]">Fasilitas</a>
+      <a href="#tentang" class="mobile-link block w-full text-center py-3 rounded-xl text-[#063A24] font-semibold text-sm bg-white border border-[#063A24]/5 transition-all duration-200 hover:bg-[#063A24] hover:text-[#B59449]">Tentang Kami</a>
+      
+      <div class="w-full border-t border-[#063A24]/5 my-1"></div>
+      
+      <a 
+        href="https://wa.me/6282282057062?text=Bismillah,%20Assalamu'alaikum%20Admin%20RQCK.%20Saya%20ingin%20bertanya%20mengenai%20pendaftaran%20dan%20tes%20penempatan%20kelas." 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mobile-link block w-full text-center bg-[#B59449] text-white font-bold text-sm py-3.5 rounded-xl shadow-xs transition-all duration-300 hover:bg-[#063A24]"
+      >
+        Hubungi Kami
+      </a>
     </div>
 
   </div>
@@ -103,23 +96,26 @@
 
   if (btn && menu && openIcon && closeIcon) {
     btn.addEventListener('click', () => {
-      const isExpanded = menu.classList.contains('hidden');
-      if (isExpanded) {
-        menu.classList.remove('hidden');
+      const isOpen = menu.classList.contains('opacity-100');
+      if (!isOpen) {
+        menu.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+        menu.classList.add('opacity-100', 'scale-100', 'pointer-events-auto');
         openIcon.classList.add('hidden');
         closeIcon.classList.remove('hidden');
       } else {
-        menu.classList.add('hidden');
+        menu.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto');
+        menu.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
         openIcon.classList.remove('hidden');
         closeIcon.classList.add('hidden');
       }
     });
 
     // Close menu when clicking links
-    const links = menu.querySelectorAll('a');
+    const links = menu.querySelectorAll('.mobile-link');
     links.forEach(link => {
       link.addEventListener('click', () => {
-        menu.classList.add('hidden');
+        menu.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto');
+        menu.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
         openIcon.classList.remove('hidden');
         closeIcon.classList.add('hidden');
       });
