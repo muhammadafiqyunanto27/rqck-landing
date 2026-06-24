@@ -1,0 +1,97 @@
+---
+// Hero.astro
+---
+
+<section id="beranda" class="relative overflow-hidden min-h-screen flex items-center bg-transparent pt-32 pb-16 md:pt-40 lg:pb-20">
+  <!-- Subtle decorative blobs -->
+  <div class="absolute inset-0 pointer-events-none">
+    <!-- Top-left glowing green blob behind navbar -->
+    <div class="absolute -top-24 -left-24 w-[500px] h-[500px] rounded-full bg-[#063A24]/12 filter blur-[100px]"></div>
+    <!-- Bottom-right glowing gold blob -->
+    <div class="absolute -bottom-24 -right-24 w-[500px] h-[500px] rounded-full bg-[#B59449]/12 filter blur-[100px]"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+
+      <!-- Left Column: Content -->
+      <div class="flex flex-col justify-center space-y-5 text-left">
+
+        <!-- Tagline badge -->
+        <div class="animate-fade-in-up flex justify-center lg:justify-start">
+          <span class="inline-flex items-center justify-center text-center px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide border"
+            style="background-color: rgba(6, 58, 36, 0.07); color: #063A24; border-color: rgba(6, 58, 36, 0.15);">
+            Pendidikan Al-Quran &amp; Ilmu Syar'i Khusus Akhwat
+          </span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="animate-fade-in-up delay-100 text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight" style="color: #063A24;">
+          Perbaiki Bacaan<br />
+          <span class="whitespace-nowrap">Al-Quranmu</span><br />
+          <span style="color: #B59449;">Sesuai Tajwid dan Sunnah</span>
+        </h1>
+
+        <!-- Sub-headline -->
+        <p class="animate-fade-in-up delay-200 text-sm md:text-base leading-relaxed max-w-xl" style="color: rgba(6, 58, 36, 0.85);">
+          Program Tahsin Berjenjang Khusus Akhwat di Rumah Quran Cahaya Kebaikan. Belajar dari dasar hingga talaqqi, dibimbing intensif oleh Ustadzah demi meraih bacaan yang tartil sesuai tuntunan Nabi.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="animate-fade-in-up delay-300 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mt-6">
+          <a
+            href="#daftar"
+            class="inline-flex items-center justify-center px-6 py-3.5 text-sm font-semibold tracking-wide rounded-xl bg-[#063A24] text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#04321E] hover:shadow-md"
+          >
+            Daftar Tes Penempatan Kelas
+            <svg class="w-4 h-4 ml-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+          <a
+            href="#program"
+            class="inline-flex items-center justify-center px-6 py-3.5 text-sm font-medium rounded-xl border border-[#063A24]/30 text-[#063A24] bg-transparent transition-all duration-300 hover:bg-[#063A24]/5"
+          >
+            Lihat Program Belajar
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Visual -->
+      <div class="animate-fade-in-up delay-300 flex justify-center lg:justify-end">
+        <div class="w-full max-w-sm md:max-w-md justify-self-center">
+          <img
+            src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?q=80&w=800"
+            alt="Mushaf Al-Quran Terbuka di Atas Rehal"
+            class="w-full h-auto object-cover rounded-2xl shadow-md"
+            loading="eager"
+          />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .delay-100 { animation-delay: 150ms; }
+  .delay-200 { animation-delay: 300ms; }
+  .delay-300 { animation-delay: 450ms; }
+</style>

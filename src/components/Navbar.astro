@@ -1,0 +1,128 @@
+---
+// Navbar.astro
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-transparent px-4 pt-4 transition-all duration-300">
+  <!-- Floating Capsule Container -->
+  <div class="bg-white/5 backdrop-blur-[2px] border border-[#063A24]/15 shadow-sm max-w-7xl mx-auto rounded-2xl px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16 sm:h-20">
+      
+      <!-- Logo Section -->
+      <div class="flex-shrink-0 flex items-center gap-3">
+        <a href="/" class="flex items-center gap-2 group">
+          <img 
+            src="/logo-rqck.png" 
+            alt="Logo RQCK" 
+            class="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <!-- Fallback text logo if image is missing/loading -->
+          <span class="text-xl font-bold tracking-wider text-[#063A24] flex items-center gap-1">
+            <span class="font-extrabold text-[#B59449]">RQCK</span>
+          </span>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#beranda" class="text-sm font-semibold text-[#063A24] hover:text-[#B59449] transition-colors duration-200">
+          Beranda
+        </a>
+        <a href="#program" class="text-sm font-semibold text-[#063A24] hover:text-[#B59449] transition-colors duration-200">
+          Program
+        </a>
+        <a href="#fasilitas" class="text-sm font-semibold text-[#063A24] hover:text-[#B59449] transition-colors duration-200">
+          Fasilitas
+        </a>
+        <a href="#tentang" class="text-sm font-semibold text-[#063A24] hover:text-[#B59449] transition-colors duration-200">
+          Tentang Kami
+        </a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="hidden sm:flex items-center">
+        <a 
+          href="#kontak" 
+          class="inline-flex items-center justify-center bg-[#B59449] text-white font-medium px-5 py-2.5 rounded-xl shadow-sm transition-all duration-300 hover:bg-[#A37F35] hover:shadow-md"
+        >
+          Hubungi Kami
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="flex md:hidden">
+        <button 
+          id="mobile-menu-btn" 
+          type="button" 
+          class="inline-flex items-center justify-center p-2 rounded-xl text-[#063A24] hover:bg-[#063A24]/5 focus:outline-none focus:ring-2 focus:ring-[#B59449]"
+          aria-label="Toggle Menu"
+        >
+          <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path id="menu-icon-open" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-[#063A24]/10 pb-6 pt-2">
+      <div class="space-y-3">
+        <a href="#beranda" class="block px-3 py-2.5 rounded-xl text-base font-semibold text-[#063A24] hover:bg-[#063A24]/5 hover:text-[#B59449] transition-all">
+          Beranda
+        </a>
+        <a href="#program" class="block px-3 py-2.5 rounded-xl text-base font-semibold text-[#063A24] hover:bg-[#063A24]/5 hover:text-[#B59449] transition-all">
+          Program
+        </a>
+        <a href="#fasilitas" class="block px-3 py-2.5 rounded-xl text-base font-semibold text-[#063A24] hover:bg-[#063A24]/5 hover:text-[#B59449] transition-all">
+          Fasilitas
+        </a>
+        <a href="#tentang" class="block px-3 py-2.5 rounded-xl text-base font-semibold text-[#063A24] hover:bg-[#063A24]/5 hover:text-[#B59449] transition-all">
+          Tentang Kami
+        </a>
+        <div class="pt-4 border-t border-[#063A24]/5 px-3">
+          <a 
+            href="#kontak" 
+            class="w-full inline-flex items-center justify-center bg-[#B59449] text-white font-medium px-4 py-2.5 rounded-xl transition-colors hover:bg-[#A37F35]"
+          >
+            Hubungi Kami
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const openIcon = document.getElementById('menu-icon-open');
+  const closeIcon = document.getElementById('menu-icon-close');
+
+  if (btn && menu && openIcon && closeIcon) {
+    btn.addEventListener('click', () => {
+      const isExpanded = menu.classList.contains('hidden');
+      if (isExpanded) {
+        menu.classList.remove('hidden');
+        openIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      } else {
+        menu.classList.add('hidden');
+        openIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    });
+
+    // Close menu when clicking links
+    const links = menu.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        openIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      });
+    });
+  }
+</script>
