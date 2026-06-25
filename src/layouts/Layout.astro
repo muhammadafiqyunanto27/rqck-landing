@@ -5,8 +5,8 @@ interface Props {
 }
 
 const { 
-	title = "RQCK Landing Page", 
-	description = "A modern landing page built with Astro and Tailwind CSS." 
+	title = "Rumah Quran Cahaya Kebaikan (RQCK) - Perbaiki Bacaan Al-Quranmu", 
+	description = "Program Tahsin Berjenjang Khusus Akhwat di Rumah Quran Cahaya Kebaikan. Belajar dari dasar hingga talaqqi, dibimbing intensif oleh Ustadzah." 
 } = Astro.props;
 ---
 
@@ -15,9 +15,26 @@ const {
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content={description} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href="/logo-rqck.png" />
+
+		<!-- Primary Meta Tags -->
 		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+
+		<!-- Open Graph / Facebook / WhatsApp -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://mafyngate.my.id/" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="/images/og-preview.png" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://mafyngate.my.id/" />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content="/images/og-preview.png" />
 		
 		<!-- Google Fonts: Inter -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
