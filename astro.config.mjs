@@ -5,7 +5,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), sitemap()],
   site: 'https://rqcahayakebaikan.web.id', // WAJIB DIISI
-  integrations: [sitemap()],
+  integrations: [tailwind(), sitemap()],
 });
