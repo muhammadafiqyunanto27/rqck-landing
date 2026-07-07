@@ -31,3 +31,6 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./dist/ # Folder hasil build Astro
         server-dir: /public_html/
+        protocol: ftps
+        security: loose
+        log-level: verbose
