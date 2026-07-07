@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Mengizinkan khusus robot pencari AI (ChatGPT, Google AI, Apple, dll)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://rqcahayakebaikan.web.id/sitemap-index.xml
