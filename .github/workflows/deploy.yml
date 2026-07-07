@@ -16,7 +16,7 @@ jobs:
     - name: ⚙️ Set up Node.js
       uses: actions/setup-node@v4
       with:
-        node-node: '20' # Sesuaikan dengan versi node Anda
+        node-version: '20' # <-- UDAH DI-FIX (tadinya node-node)
 
     - name: 📦 Install dependencies & Build
       run: |
@@ -30,7 +30,7 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./dist/ # Folder hasil build Astro
-        server-dir: /public_html/
+        server-dir: public_html/ # <-- UDAH DI-FIX (tanpa tanda / di depan)
         protocol: ftps
         security: loose
         log-level: verbose
